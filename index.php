@@ -14,7 +14,7 @@
 	<!-- malihu-custom-scrollbar-plugin-master -->
 		<link rel="stylesheet" href="./3rd-party/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.min.css" />
 	<!-- My CSS style -->
-		<link rel="stylesheet" href="./3rd-party/style.css">
+		<link rel="stylesheet" href="./3rd-party/style.min.css">
 	<!-- jQuery UI -->
 		<!-- <link rel="stylesheet" href="./3rd-party/jquery/jquery-ui-1.11.3.css"> -->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
@@ -65,7 +65,7 @@
 	<!-- jQuery Confirm -->
 		<script src='./3rd-party/jquery/jquery.confirm.js'></script>
 	<!-- My jQuery function -->
-		<script src='./3rd-party/functions.js'></script>
+		<script src='./3rd-party/functions.min.js'></script>
 	<!-- jQuery UI -->
 		<!-- <script src="./3rd-party/jquery/jquery-ui-1.11.3.js"></script> -->
 		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
