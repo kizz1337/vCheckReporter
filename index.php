@@ -14,7 +14,7 @@
 	<!-- malihu-custom-scrollbar-plugin-master -->
 		<link rel="stylesheet" href="./3rd-party/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.min.css" />
 	<!-- My CSS style -->
-		<link rel="stylesheet" href="./3rd-party/style.min.css">
+		<link rel="stylesheet" href="./3rd-party/style.css">
 	<!-- jQuery UI -->
 		<!-- <link rel="stylesheet" href="./3rd-party/jquery/jquery-ui-1.11.3.css"> -->
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
@@ -23,22 +23,34 @@
 	<body>
 		<?php
 			if (isset($_GET["date"])) {
-				$date = date("d/m/Y", strtotime($_GET["date"]));
+				// $date = date("d/m/Y", strtotime($_GET["date"]));
+				$date = new DateTime($_GET["date"]);
 			} else {
-				$date = date('d-m-Y');
+				// $date = date('d-m-Y');
+				$date = new DateTime();
 			}
 			$vcenterArray = scandir("./Archives/");
 		?>
 		<div class="container-fluid" id="content">
-			<div class="row">
+			<div class="row-fluid">
 				<div class="col-md-2 sidebar" id="sidebar">
 					<ul class="nav nav-sidebar">
-						<li><i class="glyphicon glyphicon-calendar"></i><input id="datepickerfild" class="datepicker" value="<?=date("d/m/Y", strtotime($date));?>"></li>
+						<li class="sidebar-search">
+                            <div id="divdatepicker" class="input-group custom-search-form">
+                                <input id="datepickerfild" class="datepicker" value="<?=$date->format('d-m-Y');?>">
+                                <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" id="search-btn">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                            </span>
+                            </div>
+                        </li>
 					</ul>
+					<hr>
 					<ul class="nav nav-sidebar">
 						<?php
 							foreach ($vcenterArray as $vcenter) {
-								$filename = "./Archives/".$vcenter."/".date("Y_m_d", strtotime($date)).".html";
+								$filename = "./Archives/".$vcenter."/".$date->format('Y_m_d').".html";
 								if (file_exists($filename)) {
 									echo ("<li id='".$vcenter."'><a href='".$filename."' data-vcenter='".$vcenter."' class='AjaxLink'><i class='glyphicon glyphicon-chevron-right'></i> ".strtoupper($vcenter)."</a></li>");
 								}
@@ -46,6 +58,7 @@
 						?>
 					</ul>
 					<span style="bottom:0;float:left;position:absolute;text-align:center;">
+						<hr>
 						Adrien BELLOEIL <br> vCheckReporter - <i class="octicon octicon-repo-forked"></i><a href="https://github.com/kizz1337/vCheckReporter">Fork me on GitHub</a>
 					</span>
 				</div>
@@ -65,7 +78,7 @@
 	<!-- jQuery Confirm -->
 		<script src='./3rd-party/jquery/jquery.confirm.js'></script>
 	<!-- My jQuery function -->
-		<script src='./3rd-party/functions.min.js'></script>
+		<script src='./3rd-party/functions.js'></script>
 	<!-- jQuery UI -->
 		<!-- <script src="./3rd-party/jquery/jquery-ui-1.11.3.js"></script> -->
 		<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
