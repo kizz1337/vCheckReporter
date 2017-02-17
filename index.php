@@ -1,3 +1,13 @@
+<?php
+/**
+ * This file implements the index.
+ * 
+ * @author    Adrien BELLOEIL <adrien@belloeil.com>
+ * @copyright 2015 BELLOEIL Adrien
+ * @license   http://www.gnu.org/licenses/
+ * @link      https://github.com/kizz1337/vCheckReporter
+ */
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -39,10 +49,10 @@
                             <div id="divdatepicker" class="input-group custom-search-form">
                                 <input id="datepickerfild" class="datepicker" value="<?=$date->format('d-m-Y');?>">
                                 <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" id="search-btn">
-                                    <i class="glyphicon glyphicon-calendar"></i>
-                                </button>
-                            </span>
+	                                <button type="button" class="btn btn-default" id="search-btn">
+	                                    <i class="glyphicon glyphicon-calendar"></i>
+	                                </button>
+                            	</span>
                             </div>
                         </li>
 					</ul>

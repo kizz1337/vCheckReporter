@@ -22,16 +22,17 @@ function init() {
 }
 
 function InitialyseDatePicker() {
+	$('#search-btn').unbind();
+	$('#search-btn').click(function(event){
+		$("#datepickerfild").datepicker("show");
+	});
+
 	$("#datepickerfild").datepicker({
 		firstDay: 1,
 		minDate: new Date(2015, 2, 9),
 		maxDate: "+0d",
 		hideIfNoPrevNext: false,
 		dateFormat: "dd-mm-yy",
-		// onSelect: function() {
-			// $(this).change();
-			// alert('ici');
-		// }
 	});
 }
 
